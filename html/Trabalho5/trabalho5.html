@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rio Negro</title>
+	<meta charset="UTF-8">
+	<style type="text/css">
+		li{
+			list-style-type: none;
+			margin-top: 10px;
+		}	
+
+		#comentar{
+
+			margin-left: 20px;
+			height: 30px;
+			width: 90px;
+			position: relative;
+			top: -44px;
+		}
+
+		#comentario {
+
+			height: 100px;
+			width: 400px;
+		}
+
+		#like{
+			height: 30px;
+			width: 60px;
+			margin-left: 10px; 
+		}
+
+		body{
+
+			background-color: black;
+			color: white;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<table border="0">
+		<tr>
+			<td><img src="escudo.jpg" width="90" height="90" alt="Escudo" /></td>
+			<td><h2 style="">Atlético Rio Negro Clube</h2></td>
+		</tr>
+	</table>
+	
+	<p style="font-size:24px">Atlétito Rio Negro clube foi fundado em 1913, é um clube histórico do estado do Amazonas, sendo protagonista como o maior desenvolvedor de esportes na região. Sua torcida fanática nunca deixa o time de futebol sozinho em campo.</p>
+
+	<table border="0">
+		<tr>
+			
+			<td> <span id="cont">0</span> pessoas curtiram  <input type="button" name="curtir" value="Curtir" id="like" onclick="counter()"></td>
+		</tr>
+		<tr> <td><br/></td></tr>
+	</table>		
+
+			<ul id="lista">
+			</ul>
+
+
+			<div><textarea id= "comentario" name="comentarios" rows="4" cols="50"></textarea>
+			
+			<input type="button" name="comentar" value="comentar" id="comentar"> </div>
+
+				<script type="text/javascript">
+					
+					var lista = document.getElementById("lista");
+				
+					document.getElementById("comentar").onclick = function () {
+						var text = document.getElementById("comentario");
+
+						var row = lista.appendChild (document.createElement("li"));
+						row.appendChild (document.createTextNode(text.value));
+						text.value="";				
+					}
+
+				function counter (){
+					var cont = document.getElementById("cont");
+					var result = parseInt(cont.innerHTML);
+					result++;
+					cont.innerHTML = result;
+				}
+
+				</script>	
+
+</body>
+</html>
